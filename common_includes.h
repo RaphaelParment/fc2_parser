@@ -14,8 +14,11 @@ using namespace std;
 #include <string>
 #include <vector>
 #include <sstream>
+#include <algorithm>
 
 #include "Services.h"
+#include "TcpDumpDateTime.h"
+#include "Config.h"
 
 
 #endif /* COMMON_INCLUDES_H_ */
