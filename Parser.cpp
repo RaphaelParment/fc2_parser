@@ -32,8 +32,6 @@ vector<Message> Parser::readfile(string filename)
 	vector<Message> messages;
 	ifstream input(filename);
 
-
-	int counter = 0;
 	if(input.is_open())
 	{
 		while(getline(input, message))
@@ -42,12 +40,7 @@ vector<Message> Parser::readfile(string filename)
 			if(Services::isTcpDumpDateTime(firstXChars, 15))
 			{
 				// Begining of a message
-
-				counter++;
-
-				TcpDumpDateTime messageDateTime(firstXChars);
-				messageDateTime.display();
-				cout << counter << endl;
+				MessageHeader messageHeader(message);
 
 			}
 		}
