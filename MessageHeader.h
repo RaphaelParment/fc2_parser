@@ -15,6 +15,7 @@
 class MessageHeader
 {
 private:
+	TcpDumpDateTime headerDateTime;
 	int tos; // hex
 	int ttl;
 	int id;
@@ -26,9 +27,7 @@ private:
 	void parseHeader(string header);
 
 public:
-	MessageHeader();
-
-
+	MessageHeader(string header);
 
 	const string& getFlags() const {
 		return flags;
@@ -84,6 +83,14 @@ public:
 
 	void setTtl(int ttl) {
 		this->ttl = ttl;
+	}
+
+	const TcpDumpDateTime& getHeaderDateTime() const {
+		return headerDateTime;
+	}
+
+	void setHeaderDateTime(const TcpDumpDateTime& headerDateTime) {
+		this->headerDateTime = headerDateTime;
 	}
 };
 

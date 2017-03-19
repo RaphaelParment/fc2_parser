@@ -5,9 +5,13 @@
  *      Author: raphish
  */
 
-
+#include "common_includes.h"
 #include "MessageHeader.h"
 
+MessageHeader::MessageHeader(string header)
+{
+	Services::parseHeader(header);
+}
 
 void MessageHeader::parseHeader(string header)
 {

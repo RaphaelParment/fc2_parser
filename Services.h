@@ -18,6 +18,10 @@ public:
 	static vector<string> splitString(string str, char delimiter);
 	static bool isTcpDumpDateTime(string startOfLine, int size);
 	static string getFirstXChars(string input, int x);
+	static vector<string> parseHeader(string header);
+	static string removeNoisyChars(string s);
+
+	static vector<char> getNoisyChars();
 };
 
 

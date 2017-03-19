@@ -76,5 +76,38 @@ string Services::getFirstXChars(string input, int x)
 	return firstXChars;
 }
 
+vector<string> Services::parseHeader(string header)
+{
+	vector<string> items = splitString(header, ' ');
+	for(int i = 0; i < items.size(); i++)
+	{
+		items[i] = removeNoisyChars(items[i]);
+	}
+
+	for(vector<string>::iterator it = items.begin(); it != items.end(); ++it)
+	{
+		cout << *it << endl;
+	}
+
+	return items;
+}
+
+string Services::removeNoisyChars(string str)
+{
+	for(vector<char>::iterator it = noisyChars.begin();
+			it != noisyChars.end();
+			++it)
+	{
+		str.erase(remove(str.begin(), str.end(), *it), str.end());
+	}
+
+
+	return str;
+}
+
+
+
+
+
 
 
